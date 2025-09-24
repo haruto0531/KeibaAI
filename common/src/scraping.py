@@ -14,11 +14,12 @@ from tqdm.notebook import tqdm
 import traceback
 from pathlib import Path
 
-HTML_DIR = Path("..", "data", "html")
+DATA_DIR = Path("..", "data")
+HTML_DIR = DATA_DIR / "html"
 HTML_RACE_DIR = HTML_DIR / "race"
 HTML_HORSE_DIR = HTML_DIR /"horse"
 
-def scrape_kaisai_date(from_: str, to_: str, save_dir: Path = None) -> list[str]:
+def scrape_kaisai_date(from_: str, to_: str, save_dir: Path = DATA_DIR / "tmp") -> list[str]:
     """
     from_toとto_をyyyy-mmの形で取得すると、間の開催日一覧を取得する関数。
     save_dirを指定すると、取得結果がkaisai_date_list.txtとして保存される
@@ -41,13 +42,13 @@ def scrape_kaisai_date(from_: str, to_: str, save_dir: Path = None) -> list[str]
             f.write("\n".join(kaisai_data_list))
     return kaisai_data_list
 
-def scrape_race_id_list(kaisai_data_list: list[str], save_dir: Path = None) -> list[str]:
+def scrape_race_id_list(kaisai_data_list: list[str], save_dir: Path = DATA_DIR / "tmp") -> list[str]:
     """
     開催日（yyyymmdd形式)をリストで入れると、レースid一覧が返ってくる関数。
     save_dirを指定すると、取得結果がrace_id_list.txtとして保存される
     """
     options = Options()
-    # バックグラウンドで実行
+    # ヘッドレスモード（）バックグラウンド）で起動
     options.add_argument("--headless")
     # その他の対策
     options.add_argument("--no-sandbox")

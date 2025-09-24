@@ -22,8 +22,8 @@ def create_results(
                 race_id = html_path.stem
                 html = (
                     f.read()
-                    .replace(b"<diary_snap_cut>", "")
-                    .replace(b"</diary_snap_cut>", "")
+                    .replace(b"<diary_snap_cut>", b"")
+                    .replace(b"</diary_snap_cut>", b"")
                 )
                 soup = BeautifulSoup(html, "lxml").find(
                     "table", class_="race_table_01 nk_tb_common"
@@ -73,8 +73,9 @@ def create_results(
     concat_df.index.name = "race_id"
     concat_df.columns = concat_df.columns.str.replace(" ","")
     save_dir.mkdir(parents=True, exist_ok=True)
-    concat_df.to_csv(save_dir / save_filename, sep="\t")
-    return concat_df.reset_index()
+    concat_df = concat_df.reset_index()
+    update_rawdf(concat_df, key="race_id", save_filename=save_filename)
+    return concat_df
 
 def create_race_info(
         html_path_list: list[Path],
@@ -109,8 +110,40 @@ def create_race_info(
     concat_df.index.name = "race_id"
     concat_df.columns = concat_df.columns.str.replace(" ","")
     save_dir.mkdir(parents=True, exist_ok=True)
-    concat_df.to_csv(save_dir / save_filename, sep="\t")
-    return concat_df.reset_index()
+    concat_df = concat_df.reset_index()
+    update_rawdf(concat_df, key="race_id", save_filename=save_filename)
+    return concat_df
+
+def create_return_tables(
+        html_path_list: list[Path],
+        save_dir: Path = RAWDF_DIR,
+        save_filename: str = "return_tables.csv") -> pd.DataFrame:
+    """
+    raceページのhtmlを読み込んで、払い戻しテーブルに加工する関数。
+    """
+    dfs = {}
+    for html_path in tqdm(html_path_list):
+        with open(html_path, "rb") as f:
+            try:
+                # stemを使って、ファイル名を取得する
+                race_id = html_path.stem
+                html = f.read()
+                df_list = pd.read_html(html)
+                df = pd.concat([df_list[1], df_list[2]])
+
+                # indexを付与し、切れ目をわかりやすくする
+                df.index = [race_id] * len(df)
+                dfs[race_id] = df
+            except IndexError as e:
+                print(f"table not found at {race_id}")
+                continue
+    # 辞書型のデータを繋げて一つのテーブルする
+    concat_df = pd.concat(dfs.values())
+    concat_df.index.name = "race_id"
+    save_dir.mkdir(parents=True, exist_ok=True)
+    concat_df = concat_df.reset_index()
+    update_rawdf(concat_df, key="race_id", save_filename=save_filename)
+    return concat_df
 
 def create_horse_results(
         html_path_list: list[Path],
@@ -138,5 +171,24 @@ def create_horse_results(
     concat_df.index.name = "horse_id"
     concat_df.columns = concat_df.columns.str.replace(" ","")
     save_dir.mkdir(parents=True, exist_ok=True)
-    concat_df.to_csv(save_dir / save_filename, sep="\t")
-    return concat_df.reset_index()
+    concat_df = concat_df.reset_index()
+    update_rawdf(concat_df, key="horse_id", save_filename=save_filename)
+    return concat_df
+
+def update_rawdf(
+    new_df: pd.DataFrame,
+    key: str,
+    save_filename: str,
+    save_dir: Path = RAWDF_DIR
+):
+    """
+    既存のrawdfに新しいデータを追加して保存する関数。
+    """
+    if (save_dir / save_filename).exists():
+        old_df = pd.read_csv(save_dir / save_filename, sep="\t", dtype={f"{key}": str})
+        # 念の為、key列をstr型に変換
+        new_df[key] = new_df[key].astype(str)
+        df = pd.concat([old_df[~old_df[key].isin(new_df[key])], new_df])
+        df.to_csv(save_dir / save_filename, sep="\t", index=False)
+    else:
+        new_df.to_csv(save_dir / save_filename, sep="\t", index=False)

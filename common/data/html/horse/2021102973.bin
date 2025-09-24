@@ -651,6 +651,94 @@ $('.login_show').remove();
       <tbody>
           
           <tr>
+              <td><a href="https://db.netkeiba.com/race/list/20250920/">2025/09/20</a></td>
+              <td><a href="https://db.netkeiba.com/race/sum/09/20250920/">4阪神6</a></td>
+              
+              <td>曇</td>
+              
+              
+              <td class="txt_right">4</td>
+              
+              <td class="rank_3"><a href="https://db.netkeiba.com/race/202509040604/" title="阪神ジャンプS(JGIII)">阪神ジャンプS(JGIII)</a></td>
+              <td>
+                  
+                  <a href="https://db.netkeiba.com/race/movie/202509040604" target="_blank" title="阪神ジャンプS(JGIII)の映像"><img src="https://cdn.netkeiba.com/img.db/style/netkeiba.ja/image/icon_douga.png" border="0" /></a>
+                  
+                  
+
+                  
+              </td>
+              <td class="txt_right">9</td>
+              
+              <td class="txt_right">8</td>
+              
+              <td class="txt_right">8</td>
+              <td class="txt_right">85.2</td>
+              <td class=" txt_right">7</td>
+              <td class="bml txt_right">7</td>
+              <td>
+                  
+                  <a href="https://db.netkeiba.com/jockey/result/recent/01059/" title="石神深一">石神深一</a>
+                  
+                  
+              </td>
+              <td>60</td>
+              <td>障3140</td>
+	      <td class="disp_none"><div align="center"></div></td>
+              <td class="">良</td>
+
+              
+
+              
+              
+              <td class="bml txt_right ">
+                  
+                  
+                  
+                  &nbsp;
+                  
+              </td>
+              
+              <td class="txt_right">3:35.1</td>
+              <td class="txt_right">5.5</td>
+              
+              <td class="bml txt_right ">
+                  
+                  
+                  
+                  &nbsp;
+                  
+              </td>
+              
+              <td class="">7-7-8-7</td>
+              
+              <td class="">102.0-0.0</td>
+              
+              <td class="bml " class="bml">13.7</td>
+              <td>466(-6)</td>
+              <td class="bml " align="center" nowrap>
+                  
+                  <a href="https://db.netkeiba.com/?pid=horse_comment&id=2021102973&rid=202509040604"><img src="https://cdn.netkeiba.com/img.db/style/netkeiba.ja/image/ico_comment.gif" width="13" height="13" border="0" /></a>
+                  
+                  
+              </td>
+              <td class="bml " nowrap>
+                  
+                  
+                  
+                  &nbsp;
+                  
+              </td>
+              
+
+              
+              <td><a href="https://db.netkeiba.com/horse/2018103677/">ネビーイーム</a></td>
+              
+              
+              <td></td>
+          </tr>
+          
+          <tr>
               <td><a href="https://db.netkeiba.com/race/list/20250830/">2025/08/30</a></td>
               <td><a href="https://db.netkeiba.com/race/sum/04/20250830/">3新潟3</a></td>
               

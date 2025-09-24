@@ -651,6 +651,94 @@ $('.login_show').remove();
       <tbody>
           
           <tr>
+              <td><a href="https://db.netkeiba.com/race/list/20250923/">2025/09/23</a></td>
+              <td><a href="https://db.netkeiba.com/race/sum/42/20250923/">±ºÏÂ</a></td>
+              
+              <td>ÆÞ</td>
+              
+              
+              <td class="txt_right">5</td>
+              
+              <td class=""><a href="https://db.netkeiba.com/race/202542092305/" title="ºë¶Ì¸©»ù¶Ì·´¿ÀÀîÄ®¾Þ(C2)">ºë¶Ì¸©»ù¶Ì·´¿ÀÀîÄ®¾Þ(C2)</a></td>
+              <td>
+                  
+                  
+
+                  
+                  <a href="https://nar.netkeiba.com/race/movie.html?race_id=202542092305" target="_blank" title="ºë¶Ì¸©»ù¶Ì·´¿ÀÀîÄ®¾Þ(C2)¤Î±ÇÁü"><img src="https://cdn.netkeiba.com/img.db/style/netkeiba.ja/image/icon_douga.png" border="0" /></a>
+                  
+              </td>
+              <td class="txt_right">12</td>
+              
+              <td class="txt_right">8</td>
+              
+              <td class="txt_right">12</td>
+              <td class="txt_right">9.2</td>
+              <td class=" txt_right">4</td>
+              <td class="bml txt_right">12</td>
+              <td>
+                  
+                  <a href="https://db.netkeiba.com/jockey/result/recent/05553/" title="ÊÝ±àæÆÌé">ÊÝ±àæÆÌé</a>
+                  
+                  
+              </td>
+              <td>56</td>
+              <td>¥À1500</td>
+	      <td class="disp_none"><div align="center"></div></td>
+              <td class="">ÎÉ</td>
+
+              
+
+              
+              
+              <td class="bml txt_right ">
+                  
+                  
+                  
+                  &nbsp;
+                  
+              </td>
+              
+              <td class="txt_right">1:41.0</td>
+              <td class="txt_right">4.1</td>
+              
+              <td class="bml txt_right ">
+                  
+                  
+                  
+                  &nbsp;
+                  
+              </td>
+              
+              <td class="">2-1-3-9</td>
+              
+              <td class="">30.7-39.2</td>
+              
+              <td class="bml " class="bml">43.3</td>
+              <td>496(+19)</td>
+              <td class="bml " align="center" nowrap>
+                  
+                  
+                  &nbsp;
+                  
+              </td>
+              <td class="bml " nowrap>
+                  
+                  
+                  
+                  &nbsp;
+                  
+              </td>
+              
+
+              
+              <td><a href="https://db.netkeiba.com/horse/2020104179/">¥¢¥¤¥À¥±</a></td>
+              
+              
+              <td></td>
+          </tr>
+          
+          <tr>
               <td><a href="https://db.netkeiba.com/race/list/20250526/">2025/05/26</a></td>
               <td><a href="https://db.netkeiba.com/race/sum/42/20250526/">±ºÏÂ</a></td>
               

@@ -1,0 +1,37 @@
+params:
+  "objective": "binary"
+  "metric": "binary_logloss"
+  "random_state": 100
+  "verbosity": -1
+  "feature_fraction": 0.8
+  "bagging_fraction": 0.8
+  "learning_rate": 0.01
+  "bagging_freq": 1
+features:
+  - horse_id
+  - jockey_id
+  - trainer_id
+  - umaban
+  - wakuban
+  - tansho_odds
+  - popularity
+  - impost
+  - sex
+  - age
+  - weight
+  - weight_diff
+  - race_type
+  - around
+  - course_len
+  - weather
+  - ground_state
+  - race_class
+  - place
+  - rank_3races
+  - prize_3races
+  - rank_5races
+  - prize_5races
+  - rank_10races
+  - prize_10races
+  - rank_1000races
+  - prize_1000races
